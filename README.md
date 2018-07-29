@@ -6,7 +6,7 @@
 * Databinding - https://developer.android.com/topic/libraries/data-binding/
 
 
-> or demonstartion pupose, I created at app for string my small notes which I can ready any time.
+> For demonstartion pupose, I created at app for string my small notes which I can ready any time.
 So here user can add new notes and read them any time.
 * To store the data I have used  Room Persistence Library.
 * To get the data, I have used Livedata, Which also helps ehen there is any change in data.
