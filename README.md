@@ -6,10 +6,10 @@
 * Databinding - https://developer.android.com/topic/libraries/data-binding/
 
 
-> For demonstartion pupose, I created at app for string my small notes which I can ready any time.
+> For demonstartion pupose, I havecreated  app for saving my small notes which I can ready any time.
 So here user can add new notes and read them any time.
-* To store the data I have used  Room Persistence Library.
-* To get the data, I have used Livedata, Which also helps ehen there is any change in data.
+* To store the data I have used  Room Persistence Library (insert and fetch operations are covered).
+* To get the data, I have used Livedata, Which also helps when there is any change in data source.
 * To bind the data in xml files, I have used databinding.
 
 >#### App design ####
