@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View"/>
+        <variable
+            name="noteViewModel"
+            type="com.hitesh.livedata.mynotes.NoteViewModel" />
+    </data>
+
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_notesList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btn_addNote"
+            android:visibility="@{noteViewModel.gotTheNoteList ? View.VISIBLE : View.GONE}"
+            ></android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/app_msg_one"
+            android:visibility="@{noteViewModel.gotTheNoteList ? View.GONE : View.VISIBLE}"
+            />
+
+
+        <Button
+            android:id="@+id/btn_addNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:text="@string/label_report" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LiveData</string>
+    <string name="app_msg_one">No notes yet saved</string>
+    <string name="zero">0</string>
+    <string name="label_report">Add note</string>
+    <string name="label_type_your_comment">Enter your new note</string>
+    <string name="label_submit">save</string>
+    <string name="label_cancel">cancel</string>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="note"
+            type="com.hitesh.livedata.mynotes.Note" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:background="@color/lightBg"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{note.getNoteMsg}"
+            android:textColor="@color/primaryText"
+            />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{note.formatDate}"
+            android:textColor="@color/primaryText"
+            android:textSize="10dp"
+            />
+
+    </LinearLayout>
+</layout>
