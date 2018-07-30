@@ -1,9 +1,12 @@
-package com.hitesh.livedata.mynotes;
+package com.hitesh.livedata.mynotes.viewmodel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.support.annotation.NonNull;
+
+import com.hitesh.livedata.mynotes.db.Note;
+import com.hitesh.livedata.mynotes.db.NotesDatabase;
 
 import java.util.List;
 

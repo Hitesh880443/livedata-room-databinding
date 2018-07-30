@@ -1,9 +1,11 @@
-package com.hitesh.livedata.mynotes;
+package com.hitesh.livedata.mynotes.db;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
+
+import com.hitesh.livedata.util.Constatnts;
 
 @Database(entities = {Note.class}, version = 1, exportSchema = false)
 public abstract class NotesDatabase extends RoomDatabase {

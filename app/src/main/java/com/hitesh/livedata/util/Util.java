@@ -1,4 +1,4 @@
-package com.hitesh.livedata.mynotes;
+package com.hitesh.livedata.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

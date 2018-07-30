@@ -5,7 +5,7 @@
 
         <variable
             name="note"
-            type="com.hitesh.livedata.mynotes.Note" />
+            type="com.hitesh.livedata.mynotes.db.Note" />
     </data>
 
     <LinearLayout

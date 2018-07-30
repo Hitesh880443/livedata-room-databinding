@@ -1,4 +1,4 @@
-package com.hitesh.livedata.mynotes;
+package com.hitesh.livedata.mynotes.db;
 
 import android.arch.persistence.room.TypeConverter;
 

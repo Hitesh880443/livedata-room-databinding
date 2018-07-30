@@ -1,4 +1,4 @@
-package com.hitesh.livedata.mynotes;
+package com.hitesh.livedata.mynotes.view;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import com.hitesh.livedata.R;
 import com.hitesh.livedata.databinding.ItemNoteLayoutBinding;
+import com.hitesh.livedata.mynotes.db.Note;
 
 import java.util.List;
 
