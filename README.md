@@ -6,11 +6,11 @@
 * Databinding - https://developer.android.com/topic/libraries/data-binding/
 
 
-> For demonstartion pupose, I have created app for saving my small notes which I can ready any time.
-So here user can add new notes and read them any time.
+> For demonstration purpose, I have created an app for saving my small notes which I can read at any time.
+So here the user can add new notes and read them any time.
 * To store the data I have used  Room Persistence Library (insert and fetch operations are covered).
-* To get the data, I have used Livedata, Which also helps when there is any change in data source.
-* To bind the data in xml files, I have used databinding.
+* To get the data, I have used Livedata, Which also helps when there is any change in the data source.
+* To bind the data in XML files, I have used data binding.
 
 >#### App design ####
 ![picture alt](https://github.com/Hitesh880443/livedata-room-databinding/blob/master/screens/app.png "App design screens")
