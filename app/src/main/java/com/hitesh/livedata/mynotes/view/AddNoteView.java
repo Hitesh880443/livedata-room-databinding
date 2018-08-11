@@ -1,6 +1,7 @@
 package com.hitesh.livedata.mynotes.view;
 
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
@@ -15,13 +16,14 @@ import android.widget.Toast;
 import com.hitesh.livedata.R;
 import com.hitesh.livedata.mynotes.db.Note;
 import com.hitesh.livedata.mynotes.db.NotesDatabase;
+import com.hitesh.livedata.mynotes.viewmodel.NoteViewModel;
 
 import java.util.Date;
 
 public class AddNoteView extends DialogFragment {
 
 
-    public NotesDatabase mNoteDatabase;
+    public NoteViewModel mNoteViewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,7 +36,7 @@ public class AddNoteView extends DialogFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
+        mNoteViewModel = ViewModelProviders.of(this).get(NoteViewModel.class);
 
         final EditText editText = (EditText) view.findViewById(R.id.edt_comment);
         Button button1 = (Button) view.findViewById(R.id.buttonSubmit);
@@ -51,7 +53,6 @@ public class AddNoteView extends DialogFragment {
             public void onClick(View view) {
                 // DO SOMETHINGS
                 if (!TextUtils.isEmpty(editText.getText().toString())) {
-                    initialiseDB();
                     addNote(editText.getText().toString());
                     dismiss();
                 }
@@ -63,18 +64,10 @@ public class AddNoteView extends DialogFragment {
 
     }
 
-    private void initialiseDB() {
-        mNoteDatabase = mNoteDatabase.getDataBase(getActivity());
-    }
-
     public void addNote(final String msg) {
-        new Thread(new Runnable() {
-            public void run() {
                 Note n = new Note();
                 n.setNoteDate(new Date());
                 n.setNoteMsg(msg);
-                mNoteDatabase.daoAccess().insertSingleNote(n);
-            }
-        }).start();
+                mNoteViewModel.insertSingleNote(n);
     }
 }

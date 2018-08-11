@@ -9,31 +9,56 @@ import com.hitesh.livedata.mynotes.db.Note;
 import com.hitesh.livedata.mynotes.db.NotesDatabase;
 
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class NoteViewModel extends AndroidViewModel {
 
 
     private NotesDatabase mNotesDatabase;
-    private final LiveData<List<Note>> noteList;
+    private LiveData<List<Note>> noteList;
+    private final Executor executor;
 
     public NoteViewModel(@NonNull Application application) {
         super(application);
         mNotesDatabase = NotesDatabase.getDataBase(this.getApplication());
-        noteList = mNotesDatabase.daoAccess().fetchAllNotes();
+        executor = Executors.newSingleThreadExecutor();
     }
 
 
     public LiveData<List<Note>> getNoteList() {
+        noteList = mNotesDatabase.daoAccess().fetchAllNotes();
         return noteList;
     }
 
     public void deleteNote(final Note note) {
-        new Thread(new Runnable() {
+        executor.execute(new Runnable() {
             @Override
             public void run() {
-                mNotesDatabase.daoAccess().deleteNote(note);
+                mNotesDatabase.runInTransaction(new Runnable() {
+                    @Override
+                    public void run() {
+                        mNotesDatabase.daoAccess().deleteNote(note);
+                    }
+                });
+
             }
-        }).start();
+        });
+    }
+
+    public void insertSingleNote(final Note note) {
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                mNotesDatabase.runInTransaction(new Runnable() {
+                    @Override
+                    public void run() {
+                        mNotesDatabase.daoAccess().insertSingleNote(note);
+                    }
+                });
+
+            }
+        });
     }
 
     public boolean gotTheNoteList() {

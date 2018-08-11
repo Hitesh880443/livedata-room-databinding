@@ -7,29 +7,21 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 import com.hitesh.livedata.R;
 import com.hitesh.livedata.databinding.ActivityMainBinding;
 import com.hitesh.livedata.mynotes.db.Note;
 import com.hitesh.livedata.mynotes.viewmodel.NoteViewModel;
-import com.hitesh.livedata.mynotes.db.NotesDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    private NotesDatabase mNoteDatabase;
     private AddNoteView mAddNoteDialog;
     private NoteViewModel mNoteViewModel;
-    private Button btn_addNote;
     private NotesRecylerViewAdapter mAdapter;
-    private RecyclerView mRecyclerView;
     private ActivityMainBinding binding;
 
     @Override
