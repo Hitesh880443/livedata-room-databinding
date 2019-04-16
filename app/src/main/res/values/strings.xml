@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LiveData</string>
+    <string name="app_name">LiveData App</string>
     <string name="app_msg_one">No notes yet saved</string>
     <string name="zero">0</string>
     <string name="label_report">Add note</string>
